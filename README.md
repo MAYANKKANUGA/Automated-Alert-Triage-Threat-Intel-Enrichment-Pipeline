@@ -25,13 +25,13 @@ A fully automated Security Operations Center (SOC) pipeline designed to ingest, 
 ![Auth Logs](images/03-OS-Level-Auth-Logs.jpg)
 
 ### 2. SIEM Ingestion & GeoLocation Parsing (Wazuh OpenSearch)
-![Wazuh Alert](images/04-Wazuh-SIEM-Alert-Dashboard.png)
+![Wazuh Alert](images/04-Wazuh-SIEM-Alert-Dashboard.jpg)
 
 ### 3. SOAR Execution Trace (~25 Second SLA)
-![Shuffle SOAR](images/10-Shuffle-Execution-SLA-Trace.png)
+![Shuffle SOAR](images/10-Shuffle-Execution-SLA-Trace.jpg)
 
 ### 4. Automated Incident Case Generation (TheHive)
-![TheHive Case](images/11-TheHive-Case-Overview.png)
+![TheHive Case](images/11-TheHive-Case-Overview.jpg)
 
 ### 5. Automated MS Teams Notification (Webhook)
-![MS Teams Alert](images/15-MS-Teams-Alert.png)
+![MS Teams Alert](images/15-MS-Teams-Alert.jpg)
