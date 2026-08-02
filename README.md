@@ -17,7 +17,7 @@ A fully automated Security Operations Center (SOC) pipeline designed to ingest, 
 * **Notifications:** Microsoft Teams (Adaptive JSON MessageCards)
 
 ## Project Audit & Validation
-* Successfully passed a 34-point functional architecture audit with 100% operational success, validating false-positive suppression, API failovers, private IP (RFC1918) dropping, and end-to-end data integrity. (See `Completed_SOC_Audit.pdf` in the `audit_and_evidence` folder).
+* Successfully passed a 34-point functional architecture audit with 100% operational success, validating false-positive suppression, API failovers, private IP (RFC1918) dropping, and end-to-end data integrity. (See `Completed_SOC_Audit.pdf` in the `audit` folder).
 
 * ## 📸 Pipeline Execution Evidence
 
