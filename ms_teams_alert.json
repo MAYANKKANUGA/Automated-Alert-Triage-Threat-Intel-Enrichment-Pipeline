@@ -1,0 +1,60 @@
+{
+  "@type": "MessageCard",
+  "@context": "http://schema.org/extensions",
+  "themeColor": "FF0000",
+  "summary": "SOC Alert: $exec.title",
+  "sections": [
+    {
+      "activityTitle": "## 🚨 **New Security Incident Promoted**",
+      "activitySubtitle": "Automated via Wazuh & TheHive Pipeline",
+      "markdown": "true"
+    },
+    {
+      "title": "**📋 Incident Summary**",
+      "text": "• **Rule Description:** $exec.title \n\n• **Rule ID:** $exec.rule_id \n\n• **Event Time:** $exec.timestamp \n\n• **Case ID:** $promote_to_case.body._id \n\n• **TheHive Link:** [🔗 Click here to open Case](http://13.206.124.21:9000/#/case/$promote_to_case.body._id)",
+      "markdown": "true"
+    },
+    {
+      "title": "**🎯 MITRE ATT&CK Framework**",
+      "text": "• **Tactic:** $exec.all_fields.rule.mitre.tactic \n\n• **Technique ID:** $exec.all_fields.rule.mitre.id",
+      "markdown": "true"
+    },
+    {
+      "title": "**🌐 IOC Details**",
+      "text": "• **IOC Type:** IP Address \n\n• **IOC Value:** `$ioc.message.ioc.value`",
+      "markdown": "true"
+    },
+    {
+      "title": "**🌍 GeoIP Information**",
+      "text": "• **City:** $geoip_lookup_1.message.city \n\n• **Country:** $geoip_lookup_1.message.country \n\n• **ASN:** $geoip_lookup_1.message.asn",
+      "markdown": "true"
+    },
+    {
+      "title": "**🛡️ Threat Intelligence**",
+      "text": "• **VirusTotal Hits:** $enrichment_aggregator.message.aggregated_report.threat_scores.virustotal_malicious_hits \n\n• **AbuseIPDB Score:** $enrichment_aggregator.message.aggregated_report.threat_scores.abuseipdb_confidence_score",
+      "markdown": "true"
+    },
+    {
+      "title": "**📊 Risk Assessment**",
+      "text": "• **Risk Score:** $risk_scoring.message.risk_score / 120 \n\n• **Severity:** $risk_scoring.message.severity_name \n\n• **Recommended Action:** $risk_scoring.message.recommended_action",
+      "markdown": "true"
+    },
+    {
+      "title": "**💻 Endpoint Details**",
+      "text": "• **Agent Name:** $exec.all_fields.agent.name \n\n• **Target IP:** $exec.all_fields.agent.ip \n\n• **Source User:** $exec.all_fields.data.srcuser",
+      "markdown": "true"
+    }
+  ],
+  "potentialAction": [
+    {
+      "@type": "OpenUri",
+      "name": "🔗 View Case in TheHive",
+      "targets": [
+        {
+          "os": "default",
+          "uri": "http://13.206.124.21:9000/#/case/$promote_to_case.body._id"
+        }
+      ]
+    }
+  ]
+}
